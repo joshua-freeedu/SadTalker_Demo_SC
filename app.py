@@ -12,7 +12,7 @@ from gtts import gTTS
 
 server_url = os.environ["ngrok_url"]
 
-st.set_page_config(page_title=project_title, initial_sidebar_state='collapsed', page_icon=project_icon)
+# st.set_page_config(page_title=project_title, initial_sidebar_state='collapsed', page_icon=project_icon)
 #######################################################################################################################
 def main():
 
