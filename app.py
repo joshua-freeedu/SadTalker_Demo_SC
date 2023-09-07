@@ -12,19 +12,9 @@ from gtts import gTTS
 
 server_url = os.environ["ngrok_url"]
 
-# App information and setup
-project_title = "SadTalker: Image-to-Animation App"
-project_link = "https://github.com/OpenTalker/SadTalker"
-project_icon = "icon.png"
 st.set_page_config(page_title=project_title, initial_sidebar_state='collapsed', page_icon=project_icon)
 #######################################################################################################################
 def main():
-    head_col = st.columns([1,8])
-    with head_col[0]:
-        st.image(project_icon)
-    with head_col[1]:
-        st.title(project_title)
-    st.write(f"Source Project: {project_link}")
 
     try:
         response = requests.get(f'{server_url}/ping')
@@ -36,8 +26,6 @@ def main():
         st.error("• Could not connect to the server.")
 
     st.markdown("***")
-    st.subheader("")
-
 #########################################
 
     if "driven_audio" not in st.session_state:
