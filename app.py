@@ -15,7 +15,6 @@ server_url = os.environ["ngrok_url"]
 # st.set_page_config(page_title=project_title, initial_sidebar_state='collapsed', page_icon=project_icon)
 #######################################################################################################################
 def main():
-
     try:
         response = requests.get(f'{server_url}/ping')
         if response.text == "pong":
@@ -24,8 +23,6 @@ def main():
             st.warning(f"• Server is running but returned unexpected response.")
     except requests.exceptions.ConnectionError:
         st.error("• Could not connect to the server.")
-
-    st.markdown("***")
 #########################################
 
     if "driven_audio" not in st.session_state:
